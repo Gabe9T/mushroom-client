@@ -5,6 +5,10 @@ import { Home } from "./Home";
 import { Search } from "./Search";
 import { Navbar } from "./Navbar";
 import { Login } from "./Login";
+import { Create } from "./Create";
+import { Delete } from "./Delete";
+import { Edit } from "./Edit";
+
 
 function App() {
   return (
@@ -16,6 +20,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/edit" element={<Edit />} />
+          <Route path="/delete" element={<Delete />} />
         </Routes>
       </Router>
     </>

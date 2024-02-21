@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { FormControl, Input, Button } from '@mui/material';
 import { useAuth } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export const Search = () => {
     const { accessToken, setToken } = useAuth();
@@ -11,19 +12,20 @@ export const Search = () => {
     const [gillType, setGillType] = useState("");
     const [toxicity, setToxicity] = useState("");
     const [searchResults, setSearchResults] = useState([]);
+    const navigate = useNavigate();
 
     const handleEditClick = (mushroomId) => {
-        // Implement logic to handle edit for the specified mushroom
+        navigate('/edit');
         console.log(`Editing mushroom with ID: ${mushroomId}`);
     };
 
     const handleDeleteClick = (mushroomId) => {
-        // Implement logic to handle delete for the specified mushroom
+        navigate('/delete');
         console.log(`Deleting mushroom with ID: ${mushroomId}`);
     };
 
     const handleCreateClick = () => {
-        // Implement logic to handle edit for the specified mushroom
+        navigate('/create');
         console.log(`Create button clicked`);
     };
 
