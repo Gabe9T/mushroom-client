@@ -44,15 +44,15 @@ export const Login = () => {
         <>
             <h1>This is the Login page</h1>
             <FormControl id="loginForm">
-                <Input type='text' placeholder='Email' value={userEmail} onChange={handleEmailChange} />
-                <Input type='password' placeholder='Password' value={userPassword} onChange={handlePasswordChange} />
+                <input type='text' placeholder='Email' value={userEmail} onChange={handleEmailChange} />
+                <input type='password' placeholder='Password' value={userPassword} onChange={handlePasswordChange} />
                 <Button id="loginButton" className="button" type='button' onClick={doLogIn}>Log In</Button>
             </FormControl>
             <br />
             <FormControl id="registerForm" >  {/* onSubmit={handleSubmit} */}
-                <Input type='text' placeholder='Email' />
-                <Input type='password' placeholder='Password' />
-                <Input type='password' placeholder='Confirm Password' />
+                <input type='text' placeholder='Email' />
+                <input type='password' placeholder='Password' />
+                <input type='password' placeholder='Confirm Password' />
                 <Button id="loginButton" className="button" type='submit'>Register</Button>
             </FormControl >
 

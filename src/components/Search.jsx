@@ -85,11 +85,11 @@ export const Search = () => {
         <>
             <h1>This is the search page</h1>
             <FormControl id="searchForm" >  {/* onSubmit={handleSubmit} */}
-                <Input type='text' placeholder='Common Name' value={commonName} onChange={handleCommonNameChange} />
-                <Input type='text' placeholder='Genus' value={genus} onChange={handleGenusChange} />
-                <Input type='text' placeholder='Species' value={species} onChange={handleSpeciesChange} />
-                <Input type='text' placeholder='Gill Type' value={gillType} onChange={handleGillTypeChange} />
-                <Input type='number' placeholder='Toxicity Level' value={toxicity} onChange={handleToxicityChange} />
+                <input type='text' placeholder='Common Name' value={commonName} onChange={handleCommonNameChange} />
+                <input type='text' placeholder='Genus' value={genus} onChange={handleGenusChange} />
+                <input type='text' placeholder='Species' value={species} onChange={handleSpeciesChange} />
+                <input type='text' placeholder='Gill Type' value={gillType} onChange={handleGillTypeChange} />
+                <input type='number' placeholder='Toxicity Level' value={toxicity} onChange={handleToxicityChange} />
                 <Button id="searchButton" className="button" type='submit' onClick={makeApiGetRequest}>Search</Button>
             </FormControl>
 
@@ -99,8 +99,7 @@ export const Search = () => {
                     <div key={mushroom.mushroomId}>
                         <h3>{mushroom.commonName}</h3>
                         <img className="cardImage" src={mushroom.imageURL} alt="mushroom" />
-                        <p>Genus: {mushroom.genus}</p>
-                        <p>Species: {mushroom.species}</p>
+                        <p><em>{mushroom.genus} {mushroom.species}</em></p>
                         <p>Notes: {mushroom.notes}</p>
                         <p>Gill Type: {mushroom.gillType}</p>
                         <p>Toxcity:  {mushroom.toxicityLevel}</p>
