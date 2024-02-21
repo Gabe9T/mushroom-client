@@ -12,6 +12,21 @@ export const Search = () => {
     const [toxicity, setToxicity] = useState("");
     const [searchResults, setSearchResults] = useState([]);
 
+    const handleEditClick = (mushroomId) => {
+        // Implement logic to handle edit for the specified mushroom
+        console.log(`Editing mushroom with ID: ${mushroomId}`);
+    };
+
+    const handleDeleteClick = (mushroomId) => {
+        // Implement logic to handle delete for the specified mushroom
+        console.log(`Deleting mushroom with ID: ${mushroomId}`);
+    };
+
+    const handleCreateClick = () => {
+        // Implement logic to handle edit for the specified mushroom
+        console.log(`Create button clicked`);
+    };
+
     const handleCommonNameChange = (event) => {
         setCommonName(event.target.value);
     };
@@ -103,10 +118,13 @@ export const Search = () => {
                         <p>Notes: {mushroom.notes}</p>
                         <p>Gill Type: {mushroom.gillType}</p>
                         <p>Toxcity:  {mushroom.toxicityLevel}</p>
-                        {/* Add more details as needed */}
+                        <Button className="button" onClick={() => handleEditClick(mushroom.mushroomId)}>Edit</Button>
+                        <Button className="button" onClick={() => handleDeleteClick(mushroom.mushroomId)}>Delete</Button>
                     </div>
                 ))}
             </div>
+
+            <Button className="button" onClick={() => handleCreateClick()}>Add a New Entry</Button>
         </>
     )
 }
