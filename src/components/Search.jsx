@@ -10,6 +10,7 @@ export const Search = () => {
     const [species, setSpecies] = useState("");
     const [gillType, setGillType] = useState("");
     const [toxicity, setToxicity] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
 
     const handleCommonNameChange = (event) => {
         setCommonName(event.target.value);
@@ -72,6 +73,7 @@ export const Search = () => {
             });
 
             const data = await response.json();
+            setSearchResults(data);
             console.log(data);
         } catch (error) {
             console.error(error);
@@ -90,6 +92,22 @@ export const Search = () => {
                 <Input type='number' placeholder='Toxicity Level' value={toxicity} onChange={handleToxicityChange} />
                 <Button id="searchButton" className="button" type='submit' onClick={makeApiGetRequest}>Search</Button>
             </FormControl>
+
+            <div>
+                {/* Display search results */}
+                {searchResults.map((mushroom) => (
+                    <div key={mushroom.mushroomId}>
+                        <h3>{mushroom.commonName}</h3>
+                        <img className="cardImage" src={mushroom.imageURL} alt="mushroom" />
+                        <p>Genus: {mushroom.genus}</p>
+                        <p>Species: {mushroom.species}</p>
+                        <p>Notes: {mushroom.notes}</p>
+                        <p>Gill Type: {mushroom.gillType}</p>
+                        <p>Toxcity:  {mushroom.toxicityLevel}</p>
+                        {/* Add more details as needed */}
+                    </div>
+                ))}
+            </div>
         </>
     )
 }
