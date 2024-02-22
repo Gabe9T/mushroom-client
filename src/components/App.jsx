@@ -21,7 +21,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/login" element={<Login />} />
           <Route path="/create" element={<Create />} />
-          <Route path="/edit" element={<Edit />} />
+          <Route path="/edit/:mushroomId" element={<Edit />} />
           <Route path="/delete/:mushroomId" element={<Delete />} />
         </Routes>
       </Router>

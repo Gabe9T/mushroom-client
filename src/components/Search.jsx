@@ -16,7 +16,7 @@ export const Search = () => {
     const navigate = useNavigate();
 
     const handleEditClick = (mushroomId) => {
-        navigate('/edit');
+        navigate(`/edit/${mushroomId}`);
         console.log(`Editing mushroom with ID: ${mushroomId}`);
     };
 

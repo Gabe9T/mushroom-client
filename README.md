@@ -1,6 +1,6 @@
 # Setup Instructions
 
-* In the API Server project, create appsettings.json in the project directory and add the following code:
+* To enable token authentication, in the API Server project, create appsettings.json in the project directory and add the following code:
 
 ```
 
@@ -24,7 +24,7 @@
 
 ```
 
-* In Program.cs, enter the following code:
+* To enable CORS, In Program.cs, enter the following code:
 
 ```
 
@@ -66,9 +66,6 @@ app.UseAuthorization();
 
 # OBJECTIVES FOR THURSDAY
 
-* Register page in UI
 * Edit functionality (PUT request)
-* Delete functionality
-* Random mushroom functionality
 * Styling
 * README
