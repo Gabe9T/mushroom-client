@@ -62,3 +62,13 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 ```
+
+
+# OBJECTIVES FOR THURSDAY
+
+* Register page in UI
+* Edit functionality (PUT request)
+* Delete functionality
+* Random mushroom functionality
+* Styling
+* README

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FormControl, Input, Button } from '@mui/material';
 import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { DataArray } from "@mui/icons-material";
 
 export const Search = () => {
     const { accessToken, setToken } = useAuth();
@@ -47,6 +48,25 @@ export const Search = () => {
 
     const handleToxicityChange = (event) => {
         setToxicity(event.target.value);
+    };
+
+    const makeRandomApiRequest = async () => {
+        try {
+            const response = await fetch(`https://localhost:5001/Random`, {
+                method: 'GET',
+                headers: {
+                    'Accept': '*/*',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${accessToken}`
+                },
+            });
+
+            const data = await response.json();
+            const dataArray = [data];
+            setSearchResults(dataArray);
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     const makeApiGetRequest = async () => {
@@ -125,7 +145,7 @@ export const Search = () => {
                     </div>
                 ))}
             </div>
-
+            <Button className="button" onClick={() => makeRandomApiRequest()}>Shroom Me!</Button>
             <Button className="button" onClick={() => handleCreateClick()}>Add a New Entry</Button>
         </>
     )
