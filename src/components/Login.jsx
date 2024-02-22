@@ -48,7 +48,7 @@ export const Login = () => {
             });
 
             const data = await response.json();
-            setToken(data.token);
+            setToken(data.token, userEmail);
             console.log(data);
             console.log(accessToken);
         } catch (error) {

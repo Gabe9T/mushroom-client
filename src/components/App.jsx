@@ -22,7 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/create" element={<Create />} />
           <Route path="/edit" element={<Edit />} />
-          <Route path="/delete" element={<Delete />} />
+          <Route path="/delete/:mushroomId" element={<Delete />} />
         </Routes>
       </Router>
     </>

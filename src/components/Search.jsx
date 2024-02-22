@@ -20,7 +20,7 @@ export const Search = () => {
     };
 
     const handleDeleteClick = (mushroomId) => {
-        navigate('/delete');
+        navigate(`/delete/${mushroomId}`);
         console.log(`Deleting mushroom with ID: ${mushroomId}`);
     };
 
