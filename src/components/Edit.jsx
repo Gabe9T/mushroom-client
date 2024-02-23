@@ -35,6 +35,7 @@ export const Edit = () => {
 
                 if (response.ok) {
                     const data = await response.json();
+                    console.log(data);
                     setMushroomDetails((prevDetails) => ({
                         commonName: data.commonName || "",
                         genus: data.genus || "",
@@ -78,7 +79,7 @@ export const Edit = () => {
             imageURL: mushroomDetails.imageURL,
             toxicityLevel: mushroomDetails.toxicityLevel,
             notes: mushroomDetails.notes,
-            editor: userEmail,
+            editor: mushroomDetails.editor,
             mushroomId: mushroomId
         }));
 
@@ -101,7 +102,7 @@ export const Edit = () => {
                         imageURL: mushroomDetails.imageURL,
                         toxicityLevel: mushroomDetails.toxicityLevel,
                         notes: mushroomDetails.notes,
-                        editor: userEmail,
+                        editor: mushroomDetails.editor,
                         mushroomId: mushroomId
                     }),
                 }
